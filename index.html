@@ -1,21 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Embedded Messaging Integration</title>
+  <title>Salesforce Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="robots" content="noindex">
+  <style>
+	:host {
+		--agentic-chat-container-background: #fffff;
+	}
+    body {
+      margin: 0;
+    }
+    .background-container {
+      width: 100%;
+    }
+    .background-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
+<body>
+
+<div class="background-container">
+  <img src="s.png" alt="Background">
+</div>
 <body>
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
 			agentforce_messaging.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
+            agentforce_messaging.settings.devMode = true;
 			agentforce_messaging.init(
-				'00DSB00000Q4gWL',
-				'Food_Options',
+				'00DSB00000QAo9R',
+				'RouteToQueue',
 				'https://orgfarm-4c5a5155d5.my.site-com.h0am1o8vjzf71fn98arj.wa.crm.dev:6101/ESWopentable1755616998598',
 				{
-					scrt2URL: 'https://orgfarm-3c16eecbf9.test1.my.pc-rnd.salesforce-scrt.com'
+					scrt2URL: 'https://orgfarm-0c5a291cea.test1.my.pc-rnd.salesforce-scrt.com'
 				}
 			);
 		} catch (err) {
@@ -24,7 +45,5 @@
 	};
 </script>
 <script type='text/javascript' src='https://orgfarm-4c5a5155d5.my.site-com.h0am1o8vjzf71fn98arj.wa.crm.dev:6101/ESWopentable1755616998598/assets/js/init.js' onload='initEmbeddedMessaging()'></script>
-
 </body>
 </html>
-
